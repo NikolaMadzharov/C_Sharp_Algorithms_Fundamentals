@@ -1,0 +1,24 @@
+
+
+using System.ComponentModel.Design;
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        var factiorial = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(FactorialSum(factiorial));
+
+    }
+
+    private static int FactorialSum(int factiorialNumber)
+    {
+       if(factiorialNumber == 0)
+        {
+            return 1;
+        }
+
+       return factiorialNumber * FactorialSum(factiorialNumber - 1);
+    }
+}
