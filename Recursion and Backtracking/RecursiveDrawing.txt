@@ -1,0 +1,34 @@
+
+
+using System.ComponentModel.Design;
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        var n = int.Parse(Console.ReadLine());
+
+
+        Draw(n);
+
+
+    }
+
+    private static void Draw(int row)
+    {
+       
+        if (row == 0)
+        {
+            return;
+
+            
+        }
+
+        Console.WriteLine(new string('*', row ));
+
+        Draw(row - 1);
+
+        Console.WriteLine(new string('#', row));
+
+    }
+}
