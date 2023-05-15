@@ -1,0 +1,26 @@
+
+
+using System.ComponentModel.Design;
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        var arr = Console.ReadLine()
+             .Split()
+             .Select(int.Parse).
+             ToArray();
+
+        Console.WriteLine(RecursiveArrSum(arr, 0));
+    }
+
+    private static int RecursiveArrSum(int[] arr, int index)
+    {
+        if (index == arr.Length - 1)
+        {
+            return arr[index];
+        }
+
+        return arr[index] + RecursiveArrSum(arr, index + 1);
+    }
+}
