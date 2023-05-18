@@ -1,0 +1,46 @@
+
+
+using System.ComponentModel.Design;
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+       var arr = Console.ReadLine().
+            Split().
+            Select(int.Parse)
+            .ToArray();
+
+        SelectionSortAlg(arr);
+
+        Console.WriteLine(string.Join(" ", arr));
+
+
+
+    }
+
+    private static void SelectionSortAlg(int[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int min = i;
+
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[min] > arr[j])
+                {
+                    min = j;
+                }
+            }
+
+            SwapElements(arr, min, i);
+        }
+    }
+
+    private static void SwapElements(int[] arr, int first, int second)
+    {
+        var temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
